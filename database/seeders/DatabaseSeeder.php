@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             \Database\Seeders\AdminSeeder::class,
+            \Database\Seeders\PesananSeeder::class,
         ]);
     }
 }
