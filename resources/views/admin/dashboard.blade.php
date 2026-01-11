@@ -237,13 +237,13 @@
         <i class="fas fa-bar-chart"></i> Statistik
     </div>
     <div class="stats-grid">
-        <div class="stat-card">
+        <a href="{{ route('pesan.index') }}" class="stat-card" style="text-decoration: none; color: inherit;">
             <div class="stat-icon" style="color: #667eea;">
                 <i class="fas fa-shopping-bag"></i>
             </div>
             <h4>Total Pesanan</h4>
-            <div class="stat-number">1,234</div>
-        </div>
+            <div class="stat-number">{{ number_format($totalPesanan ?? 0, 0, ',', '.') }}</div>
+        </a>
 
 
 

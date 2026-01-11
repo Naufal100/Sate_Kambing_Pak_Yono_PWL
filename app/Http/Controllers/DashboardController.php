@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pesan;
 
 class DashboardController extends Controller
 {
@@ -12,7 +13,9 @@ class DashboardController extends Controller
             return redirect('/login');
         }
 
-        return view('admin.dashboard');
+        $totalPesanan = Pesan::count();
+
+        return view('admin.dashboard', compact('totalPesanan'));
     }
 
     public function kelolaMenu()
@@ -30,7 +33,7 @@ class DashboardController extends Controller
             return redirect('/login');
         }
 
-        return view('admin.pesanan');
+        return redirect()->route('pesan.index');
     }
 
     public function kelolaSaran()
